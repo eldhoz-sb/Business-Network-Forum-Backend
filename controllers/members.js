@@ -10,7 +10,7 @@ const { connections } = require('mongoose');
 // Regular expression for email validation
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
-const baseUrl = process.env.API_BASE_URL;
+const baseUrl = process.env.BACKEND_API_BASE_URL;
 
 
 // Function to send a verification email
@@ -256,7 +256,7 @@ membersRouter.post('/upload/photo', upload.single('photo'), async (req, res) => 
     const { filename, path: filePath } = req.file; // Assuming a single 'photo' field
 
     // Implement logic to store the uploaded image (e.g., move to a permanent storage location or save path/filename in database)
-    const imageUrl = `${process.env.API_BASE_URL}/images/${filename}`; // Replace with your actual storage logic
+    const imageUrl = `${process.env.BACKEND_API_BASE_URL}/images/${filename}`; // Replace with your actual storage logic
 
     res.status(200).json({ imageUrl }); // Send uploaded image URL in response
   } catch (error) {

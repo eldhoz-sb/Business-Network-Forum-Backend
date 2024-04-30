@@ -2,6 +2,7 @@ const express = require('express');
 const connectionRouter = express.Router();
 const Member = require('../models/member');
 
+
 connectionRouter.get('/:userId', async (req, res) => {
   try {
     const { userId } = req.params; // Access the user ID from URL parameters
